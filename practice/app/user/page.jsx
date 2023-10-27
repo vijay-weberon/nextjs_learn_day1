@@ -1,8 +1,9 @@
 'use client'
 import React, { useState } from 'react'
 
+
 const page = () => {
-    // const [state,setState]=useState(0)
+    const [state,setState]=useState(0)
     const handleClick=()=>{
         console.log("Button Clicked")
         setState(state+1)

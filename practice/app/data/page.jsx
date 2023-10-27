@@ -1,39 +1,40 @@
 'use client'
-import React, { useEffect, useState } from 'react'
-import axios from 'axios'
-import Name from './name'
-// import styles from "./styles"
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import Link from 'next/link';
 
-const page = () => {
-    const [state,setState]=useState([])
-    const URL = "https://fakestoreapi.com/products"
-    const fetchData=async()=>{
-        try{
-            let data=await axios.get(URL)
-            setState(data.data)
-        }
-        catch(err){
-            console.log(err)
-        }
 
+
+const Page = () => {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    async function fetchProducts() {
+      try {
+        const response = await axios.get('https://fakestoreapi.com/products');
+        setProducts(response.data);
+      } catch (error) {
+        console.error('Error fetching products:', error);
+      }
     }
-    useEffect(()=>{
-        fetchData()
-    },[])
+
+    fetchProducts();
+  }, []);
+
   return (
-    <div >
-        <Name/>
-
-        {
-            state.map((el)=>(
-                <div key={el.id}>
-                    <p>{el.title}</p>
-                </div>
-            ))
-        }
+    <div>
+      <h1>Product List</h1>
+      <ul>
+        {products.map((product) => (
+          <li key={product.id}>
+            <Link href={`/data/${product.id}`}>
+              <p>{product.title}</p>
+            </Link>
+          </li>
+        ))}
+      </ul>
     </div>
-    
-  )
-}
+  );
+};
 
-export default page
+export default Page;
