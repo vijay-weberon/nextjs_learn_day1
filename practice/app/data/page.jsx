@@ -7,7 +7,7 @@ import Link from 'next/link';
 
 const Page = () => {
   const [products, setProducts] = useState([]);
-
+console.log(products)
   useEffect(() => {
     async function fetchProducts() {
       try {
