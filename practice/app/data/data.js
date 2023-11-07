@@ -1,0 +1,12 @@
+ const data={
+    "banner_header":"Personalized Print",
+    "banner_header_tagline":"Send Intelligent Mail, track responses, Measure ROI",
+    "content_p1":"We at ReachPersona appreciate the small business owners who set out to provide value to their customers, braving all odds. With the number of responsibilities they juggle, we realize that by taking a few off their shoulders, can help them move faster towards realizing their dream.",
+    "content_p2":"With that as our motivation, we offer personalized print marketing services for sending intelligent mail, that can track responses to measure ROI of print campaigns.",
+    "footer_text":"Email : ",
+    "mailto_link":"mailto:Info@ReachPersona.com",
+    "footer_email":"Info@ReachPersona.com"
+
+
+}
+export default data

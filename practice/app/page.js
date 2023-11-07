@@ -10,6 +10,9 @@ const page = () => {
       </Link>
       <Link href="/user">
       user page</Link>
+      <hr></hr>
+      <Link href="/template">
+      template page</Link>
   </>)
 }
 
